@@ -11,11 +11,19 @@ This project allows the user to add Engineers and Machines to a database and tie
 
 ## Setup/Installation Requirements
 
+## Website Setup:
 * Download or Clone project from Github repository.
-* Open a terminal within Bakery.Tests folder within main project directory.
+* Open a terminal within BestRest folder within main project directory.
 * Use command: 'dotnet restore' to install.
-* After installation, navigate to Bakery folder within main project directory and use command 'dotnet run'. 
-* Follow terminal prompts to see application run.
+* After installation, type in 'dotnet build'.
+* After build, run the program with 'dotnet run' in the terminal.
+* If you don't have it already, create a "appsettings.json" file in the "BestRest" directory and Insert the code below with your user name and password for MySQL: 
+
+## MySQL Workbench Schema Setup:
+1. Open [MySql Workbench](https://www.mysql.com/products/workbench/) and connect to Local instance.
+2. In the top level of this project directory, open the janet_karpenske.sql file using MySQL Workbench.
+---
+
 
 ## Known Bugs
 

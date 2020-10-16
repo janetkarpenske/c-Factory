@@ -87,24 +87,24 @@ public ActionResult AddEngineer(Machine machine, int EngineerId)
 
 public ActionResult Delete(int id)
 {
-    var thisItem = _db.Items.FirstOrDefault(items => items.ItemId == id);
-    return View(thisItem);
+    var foundMachine = _db.Machines.FirstOrDefault(machines => machines.MachineId == id);
+    return View(foundMachine);
 }
 
-[HttpPost, ActionName("Delete")]
+[HttpPost, ActionName("Delete")] //What is this second parameter??
 public ActionResult DeleteConfirmed(int id)
 {
-    var thisItem = _db.Items.FirstOrDefault(items => items.ItemId == id);
-    _db.Items.Remove(thisItem);
+    var thisMachine = _db.Machines.FirstOrDefault(machines => machines.MachineId == id);
+    _db.Machines.Remove(thisMachine);
     _db.SaveChanges();
     return RedirectToAction("Index");
 }
 
 [HttpPost]
-public ActionResult DeleteCategory(int joinId)
+public ActionResult DeleteEngineer(int joinId)
 {
-    var joinEntry = _db.CategoryItem.FirstOrDefault(entry => entry.CategoryItemId == joinId);
-    _db.CategoryItem.Remove(joinEntry);
+    var joinEntry = _db.EngineerMachine.FirstOrDefault(entry => entry.EngineerMachineId == joinId); //when a machine is deleted it deletes the association of any engineers to the machine but not the engineer themself.
+    _db.EngineerMachine.Remove(joinEntry);
     _db.SaveChanges();
     return RedirectToAction("Index");
 }

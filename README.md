@@ -1,17 +1,13 @@
-# Project Name
+# Mr. Sillystring's Facotry
 
-#### Brief Description. Created On: mm/dd/yyyy, Updated Last: mm/dd/yyyy
+#### Allows the user to add Engineers and Machines to a database and ties them together using many-to-many relationships. Created On: 10/16/2020, Updated Last: 10/16/2020.
 
 #### By Janet Karpenske
 
 ## Description
 
-This program...
+This project allows the user to add Engineers and Machines to a database and ties them together using many-to-many relationships.
 
-## Specifications
-| Description | Input | Output |
-|-------------|---------------|--------|
-| 
 
 ## Setup/Installation Requirements
 
@@ -31,7 +27,7 @@ https://github.com/janetkarpenske
 
 ## Technologies Used
 
-C#, MVCTest, and Markdown.
+C#, SQL, MySQL, and Markdown.
 
 ## Link To Active Site:
 Not Applicable
@@ -40,4 +36,4 @@ Not Applicable
 
 This software is licensed under the MIT license.
 
-Copyright (c) 2016 **Janet Karpenske** _Project Name_
+Copyright (c) 2016 **Janet Karpenske** _Mr. Sillystring's Factory_

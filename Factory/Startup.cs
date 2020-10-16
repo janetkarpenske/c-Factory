@@ -44,7 +44,7 @@ namespace Factory
 
       app.Run(async (context) =>
       {
-        await context.Response.WriteAsync("Something went wrong!");
+        await context.Response.WriteAsync("Oopsie Daisies!");
       });
     }
   }

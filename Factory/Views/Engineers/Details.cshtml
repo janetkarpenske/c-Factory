@@ -2,13 +2,13 @@
   Layout = "_Layout";
 }
 
-@model ToDoList.Models.Engineer;
+@model Factory.Models.Engineer;
 
 <h2>Engineer Details</h2>
 <hr />
 <h3>@Html.DisplayNameFor(model => model.EngineerName): @Html.DisplayFor(model => model.EngineerName)</h3>
 
-@if(@Model.Items.Count == 0)
+@if(@Model.Machines.Count == 0)
 {
   <p>This engineer has not been assigned to any machines yet</p>
 }

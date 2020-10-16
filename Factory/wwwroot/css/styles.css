@@ -1,6 +1,28 @@
 h1 {
   text-align: center;
+  margin-top: 80px;
   color: rgb(4, 151, 196);
   font-family: 'Lobster Two', cursive;
   font-size: 80px;
+}
+
+.col-md-6 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+#header {
+  position:fixed;
+  top:0px;
+  left:0px;
+  width:100%;
+  background:#333;
+  padding:12px;
+}
+
+.title-button {
+  margin-left: 10%;
 }

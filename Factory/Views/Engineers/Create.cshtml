@@ -8,7 +8,7 @@
 
 @using (Html.BeginForm())
 {
-    @Html.LabelFor(model => model.EngineerName)
+    @Html.LabelFor(model => model.EngineerName, "Please enter a name for this engineer: ")
     @Html.TextBoxFor(model => model.EngineerName)
 
 

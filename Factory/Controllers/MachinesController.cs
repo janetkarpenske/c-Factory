@@ -23,18 +23,18 @@ namespace Factory.Controllers
 
 public ActionResult Create() //shows page to create a new machine
 {
-    ViewBag.EngineerId = new SelectList(_db.Engineers, "EngineerId", "EngineerName"); //Passes a dropdown of engineers into the form
+    // ViewBag.EngineerId = new SelectList(_db.Engineers, "EngineerId", "EngineerName"); //Passes a dropdown of engineers into the form
     return View();
 }
 
 [HttpPost] //Actually creates the machine that was just entered
-public ActionResult Create(Machine machine, int EngineerId)
+public ActionResult Create(Machine machine) //int EngineerId
 {
     _db.Machines.Add(machine); //adds the new machine to the machine database
-    if (EngineerId != 0) //Basically means: if an engineer was selected in the form add it to the join table as well??
-    {
-        _db.EngineerMachine.Add(new EngineerMachine() { EngineerId = EngineerId, MachineId = machine.MachineId });
-    }
+    // if (EngineerId != 0) //Basically means: if an engineer was selected in the form add it to the join table as well??
+    // {
+    //     _db.EngineerMachine.Add(new EngineerMachine() { EngineerId = EngineerId, MachineId = machine.MachineId });
+    // }
     _db.SaveChanges();
     return RedirectToAction("Index");
 }

@@ -51,7 +51,7 @@ public ActionResult Create(Machine machine) //int EngineerId
 public ActionResult Edit(int id)
 {
     var foundMachine = _db.Machines.FirstOrDefault(machines => machines.MachineId == id); //finds the machine to be edited by matching the id's
-    ViewBag.EngineerId = new SelectList(_db.Engineers, "EngineerId", "EngineerName"); //passes in a dropdown list of engineers to choose from
+    // ViewBag.EngineerId = new SelectList(_db.Engineers, "EngineerId", "EngineerName"); //passes in a dropdown list of engineers to choose from
     return View(foundMachine);
 }
 

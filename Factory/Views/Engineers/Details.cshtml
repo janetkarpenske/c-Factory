@@ -10,16 +10,16 @@
 
 @if(@Model.Machines.Count == 0)
 {
-  <p>This engineer has not been assigned to any machines yet</p>
+  <p>This engineer has not been assigned to any machines yet.</p>
 }
 else
 {
-  <h4>Machines this engineer can operate:</h4>
+  <h4>Machines this engineer is qulified to repair:</h4>
   <ul>
   @foreach(var join in Model.Machines)
   {
     <li>@join.Machine.MachineName</li>
-      @using (Html.BeginForm("DeleteMachine", "Engineers")) //Button to individually delete engineers related to this machine
+      @using (Html.BeginForm("DeleteMachine", "Engineers"))
     {
       @Html.Hidden("joinId", @join.EngineerMachineId)
       <input type="submit" value="Delete"/>
@@ -27,8 +27,20 @@ else
   }
   </ul>
 }
+<div class="row">
+  <div class="col-md-3">
+    <p>@Html.ActionLink("View My Engineers", "Index")</p>
+  </div>
+  <div class="col-md-3">
+    <p>@Html.ActionLink("Edit Engineer", "Edit", new { id = Model.EngineerId })</p>
+  </div>
+  <div class="col-md-3">
+    <p>@Html.ActionLink("Delete Engineer", "Delete", new { id = Model.EngineerId })</p>
+  </div>
+  <div class="col-md-3">
+    <p>@Html.ActionLink("Add a Machine Qualification", "AddMachine", new { id = Model.EngineerId })</p>
+  </div>
+</div>
 
-<p>@Html.ActionLink("View All Engineers", "Index")</p>
-<p>@Html.ActionLink("Edit Engineer", "Edit", new { id = Model.EngineerId })</p>
-<p>@Html.ActionLink("Delete Engineer", "Delete", new { id = Model.EngineerId })</p>
-<p>@Html.ActionLink("Add a Machine", "AddMachine", new { id = Model.EngineerId })</p>
+
+

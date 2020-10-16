@@ -6,9 +6,9 @@
 
 <h2>Are you sure you want to delete this machine?</h2>
 
-@Html.DisplayNameFor(model => model.MachineName): @Html.DisplayFor(model => model.MachineName)
+Machine Name: @Html.DisplayFor(model => model.MachineName)
 @using (Html.BeginForm())
 {
     <input type="submit" value="Delete" />
 }
-@Html.ActionLink("Back to List of Machines", "Index")
+@Html.ActionLink("No, View My Machines", "Index")

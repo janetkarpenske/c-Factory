@@ -5,7 +5,7 @@
 
 @model Factory.Models.Engineer
 
-<h2>Edit</h2>
+<h2>Engineer Editor</h2>
 
 <h4>Edit Engineer: @Html.DisplayFor(model => model.EngineerName)</h4>
 
@@ -13,9 +13,9 @@
 {
     @Html.HiddenFor(model => model.EngineerId)
 
-    @Html.LabelFor(model => model.EngineerName)
+    @Html.LabelFor(model => model.EngineerName, "Name")
     @Html.EditorFor(model => model.EngineerName)
 
     <input type="submit" value="Save" />
 }
-<p>@Html.ActionLink("Back to categories", "Index")</p>
+<p>@Html.ActionLink("Back to My Engineers", "Index")</p>

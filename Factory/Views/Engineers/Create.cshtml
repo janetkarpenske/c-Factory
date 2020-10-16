@@ -4,14 +4,14 @@
 
 @model Factory.Models.Engineer
 
-<h4>Add a new Engineer</h4>
+<h4>Add A New Engineer</h4>
 
 @using (Html.BeginForm())
 {
-    @Html.LabelFor(model => model.EngineerName, "Please enter a name for this engineer: ")
+    @Html.LabelFor(model => model.EngineerName, "Enter Name of New Engineer ")
     @Html.TextBoxFor(model => model.EngineerName)
 
 
-    <input type="submit" value="Add new Engineer" class="btn btn-default" />
+    <input type="submit" value="Add Engineer" class="btn btn-default" />
 }
-<p>@Html.ActionLink("Show all Engineers", "Index")</p>
+<p>@Html.ActionLink("View My Engineers", "Index")</p>

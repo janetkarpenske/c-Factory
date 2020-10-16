@@ -108,6 +108,12 @@ public ActionResult DeleteEngineer(int joinId)
     _db.SaveChanges();
     return RedirectToAction("Index");
 }
-
+    [HttpPost]
+    public ActionResult Index(string MachineName)
+    {
+      List<Machine> model = _db.Machines.Where(x => x.MachineName.Contains(MachineName)).ToList();
+      List<Machine> SortedList = model.OrderBy(o => o.MachineName).ToList();
+      return View("Index", SortedList);
+    }
   }
 }

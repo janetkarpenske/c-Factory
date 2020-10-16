@@ -11,7 +11,12 @@
 {
   <h3>No Engineers have been added yet.</h3>
 } 
-
+@using (Html.BeginForm())
+{
+  @Html.Label("Filter Engineers by Name")
+  @Html.TextBox("EngineerName")
+  <input type="submit" value="Search" class="btn btn-info btn-sm"/>
+}<br>
 @foreach (Engineer engineer in Model)
 {
   <li>@Html.ActionLink($"{engineer.EngineerName}", "Details", new { id = engineer.EngineerId })</li>

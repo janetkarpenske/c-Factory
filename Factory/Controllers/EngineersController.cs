@@ -1,8 +1,8 @@
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
-using System;
 using Microsoft.AspNetCore.Mvc;
 using Factory.Models;
+using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Linq;
 
 namespace Factory.Controllers
@@ -55,6 +55,24 @@ public ActionResult Details(int id)
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
+
+    public ActionResult AddMachine(int id) //Displays page that allows you to add an additional machine to the engineer
+{
+    var thisEngineer = _db.Engineers.FirstOrDefault(engineers => engineers.EngineerId == id); //finds the engineer to have a machine added to it
+    ViewBag.MachineId = new SelectList(_db.Machines, "MachineId", "MachineName"); //Passes in a dropdown to delect an engineer
+    return View(thisEngineer);
+}
+
+[HttpPost]
+public ActionResult AddMachine(Engineer engineer, int MachineId)
+{
+    if (MachineId != 0)
+    {
+    _db.EngineerMachine.Add(new EngineerMachine() { MachineId = MachineId, EngineerId = engineer.EngineerId });
+    }
+    _db.SaveChanges();
+    return RedirectToAction("Index");
+}
 
   public ActionResult Delete(int id)
 {

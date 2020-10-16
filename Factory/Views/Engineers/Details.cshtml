@@ -1,0 +1,28 @@
+@{
+  Layout = "_Layout";
+}
+
+@model ToDoList.Models.Engineer;
+
+<h2>Engineer Details</h2>
+<hr />
+<h3>@Html.DisplayNameFor(model => model.EngineerName): @Html.DisplayFor(model => model.EngineerName)</h3>
+
+@if(@Model.Items.Count == 0)
+{
+  <p>This engineer has not been assigned to any machines yet</p>
+}
+else
+{
+  <h4>Machines this engineer can operate:</h4>
+  <ul>
+  @foreach(var join in Model.Machines)
+  {
+    <li>@join.Machine.MachineName</li>
+  }
+  </ul>
+}
+
+<p>@Html.ActionLink("View All Engineers", "Index")</p>
+<p>@Html.ActionLink("Edit Engineer", "Edit", new { id = Model.EngineerId })</p>
+<p>@Html.ActionLink("Delete Engineer", "Delete", new { id = Model.EngineerId })</p>

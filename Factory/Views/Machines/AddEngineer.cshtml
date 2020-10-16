@@ -8,6 +8,11 @@
 
 <h4>Add an engineer to @Html.DisplayFor(model => model.MachineName)</h4>
 
+@if(@Model.Engineers.Count == 0)
+{
+  <p>You haven't created any engineers to assign to this machine yet. Please go to the Engineers page and add an engineer first!</p>
+}
+else {
 @using (Html.BeginForm())
 {
     @Html.HiddenFor(model => model.MachineId)
@@ -16,6 +21,7 @@
     @Html.DropDownList("EngineerId")
 
     <input type="submit" value="Save" />
+}
 }
 
 <p>@Html.ActionLink("Back to list", "Index")</p>
